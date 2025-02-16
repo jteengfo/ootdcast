@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "./../components/Header";
 import UserProfile from "./../components/UserProfile";
+import GenerateButton from "./../components/GenerateButton";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <main className={styles.main}>
         <Header/>
         <UserProfile/>
+        <GenerateButton/>
         <Image
           className={styles.logo}
           src="/next.svg"
