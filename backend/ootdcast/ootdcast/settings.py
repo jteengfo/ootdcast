@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ootdcastapp',
+    'rest_framework',
 ]
 
 # since we defined custom User model, we tell Django to use custom model
