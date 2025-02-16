@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "./../components/Header";
+import Sidebar from "./../components/Sidebar";  
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
           height={38}
           priority
         />
+        <Sidebar />
         <ol>
           <li>
             Get started by editing <code>src/app/page.js</code>.
