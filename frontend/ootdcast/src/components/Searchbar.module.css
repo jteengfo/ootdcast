@@ -1,0 +1,38 @@
+/* src/components/SearchBar.module.css */
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the search bar */
+  }
+  
+  .input {
+    color: #101010;
+    background-color: transparent;
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .input:focus {
+    border-color: #0070f3; /* Highlight the input when focused */
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #005bb5; /* Darken the button on hover */
+  }
