@@ -8,9 +8,9 @@
 
 .header {
   width: 100%;
-  background-color: #f4f4f4; /* Optional: Add a background color for the header */
+  background-color: #f4f4f4; 
   padding: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for the header */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .content {
@@ -22,11 +22,28 @@
   width: 250px; /* Fixed width for the sidebar */
   background-color: #f4f4f4; /* Dark background color for the sidebar */
   padding: 1rem;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for the sidebar */
+   /*box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); Optional: Add a shadow for the sidebar */
 }
 
 .main {
   flex: 1;
   padding: 2rem;
   background-color: f4f4f4; /* Background color for the main content area */
+}
+
+.greetingContainer {
+  width: 95%; /* Adjust as needed */
+  max-width: 1250px; /* Optional for responsiveness */
+  margin: 0 auto; /* Centers the div */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  position: relative;
+  border-radius: 10px; /* Soft rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  background-color: azure;
+}
+.greetingTextContainer{
+  margin-bottom: 0;
 }

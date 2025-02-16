@@ -1,6 +1,7 @@
 import styles from "./page.module.css";
 import Header from "./../components/Header";
 import Sidebar from "./../components/Sidebar";
+import Greeting from "./../components/Greeting";
 
 export default function Home() {
   return (
@@ -13,6 +14,9 @@ export default function Home() {
           <Sidebar />
         </div>
         <main className={styles.main}>
+          <div className={styles.greetingContainer}>
+            <div className={styles.greetingTextContainer}><Greeting /></div>
+          </div>
         </main>
       </div>
     </div>
