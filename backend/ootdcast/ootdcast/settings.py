@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ootdcastapp',
     'rest_framework',
+    'corsheaders',
 ]
 
 # since we defined custom User model, we tell Django to use custom model
@@ -52,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'ootdcast.urls'
@@ -127,4 +129,11 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Allow all origins (for development only)
+CORS_ALLOW_ALL_ORIGINS = True
+
+# Or allow specific origins
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 

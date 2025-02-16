@@ -7,7 +7,7 @@ export default function Sidebar() {
     <nav className={styles.sidebar}>
       <ul>
         <li>
-          <Link href="/" className={styles.menuItem}>
+          <Link href="/dashboard" className={styles.menuItem}>
             <div className={styles.menuContent}>
               <Image src="/icons/home.png" alt="Home" width={24} height={24} />
               <span>Home</span>
