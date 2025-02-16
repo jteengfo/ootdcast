@@ -3,11 +3,12 @@ import Header from "./../components/Header";
 import Sidebar from "./../components/Sidebar";
 import Greeting from "./../components/Greeting";
 import SearchBar from "@/components/Searchbar";
+import Login from "../components/Login";
 
 export default function Home() {
   return (
     <div className={styles.page}>
-      <div className={styles.header}>
+      {/* <div className={styles.header}>
         <SearchBar />
         <Header />
       </div>
@@ -16,13 +17,12 @@ export default function Home() {
           <Sidebar />
         </div>
         <main className={styles.main}>
-          <div className={styles.greetingContainer}>
-            <div className={styles.greetingTextContainer}>
-              <Greeting />
-            </div>
+          <div className={styles.greeting}>
+            <Greeting />
           </div>
         </main>
-      </div>
+      </div> */}
+      <Login/ >
     </div>
   );
 }

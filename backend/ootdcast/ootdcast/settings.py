@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'ootdcast.urls'
@@ -138,4 +139,11 @@ CORS_ALLOWED_ORIGINS = [
 # Alternatively, for development, you can allow all origins:
 # CORS_ALLOW_ALL_ORIGINS = True
 
+# Allow all origins (for development only)
+CORS_ALLOW_ALL_ORIGINS = True
+
+# Or allow specific origins
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 
