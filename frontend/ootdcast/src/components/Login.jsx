@@ -53,6 +53,7 @@ export default function LoginPage() {
       }
 
       console.log(isLogin ? 'Logged in' : 'Signed up')
+      localStorage.setItem('username', username);
 
       window.location.href = '/dashboard'
 

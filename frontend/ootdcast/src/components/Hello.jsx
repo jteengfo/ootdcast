@@ -1,9 +1,22 @@
-import styles from "./Hello.module.css";
+"use client";
+import { useEffect, useState } from "react";
 
 export default function Hello() {
-    return (
-        <div className={styles.hello}>
-            <h1>Welcome, user</h1>
-        </div>
-    )
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const storedUsername = localStorage.getItem("username") || "";
+      setUsername(storedUsername);
+    }
+  }, []);
+
+  return (
+    <div>
+      <h1 style={{ marginBottom: 20 }}>Hello, {username ? username : "Guest"}</h1>
+    </div>
+  );
 }
+
+
+
