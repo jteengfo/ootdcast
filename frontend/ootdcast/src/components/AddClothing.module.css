@@ -1,0 +1,80 @@
+/* AddClothing.module.css */
+.addClothing {
+    max-width: 600px;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .addClothing h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .formGroup input,
+  .formGroup select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+    color: #a9a9a9; /* Default text color for selected value */
+  }
+  
+  /* Hint/placeholder color for input */
+  .formGroup input::placeholder {
+    color: #a9a9a9; /* Hint color for input */
+    opacity: 1; /* Ensure full visibility */
+  }
+  
+  /* Hint/placeholder color for select */
+  .formGroup select:invalid {
+    color: #a9a9a9; /* Hint color for select */
+  }
+  
+  /* Dropdown option color */
+  .formGroup select option {
+    color: #101010; /* Text color for dropdown options */
+  }
+  
+  /* Selected value color */
+  .formGroup select:valid {
+    color: #101010; /* Text color for selected value */
+  }
+  
+  .formGroup input:focus,
+  .formGroup select:focus {
+    border-color: #0070f3;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #0070f3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #005bb5;
+  }
