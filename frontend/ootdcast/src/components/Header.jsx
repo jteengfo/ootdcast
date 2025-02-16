@@ -1,6 +1,10 @@
+import styles from './Header.module.css';
+
 const Header = () => {
     return (
-            <h1 style={{backgroundColor: "lightblue", color: "black", fontSize: "45px", padding: "20px", paddingBottom: "black", fontFamily: "inherit", textAlign: "center", alignItems: "center"}}> OOTDcast </h1>
+        <header className={styles.header}>
+            <h1>OOTDcast APP</h1>
+        </header>
     )
 }
 
