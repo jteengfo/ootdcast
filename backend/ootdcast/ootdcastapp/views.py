@@ -25,6 +25,10 @@ class UserCreate(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+class ClothingItemDelete(generics.DestroyAPIView):
+    queryset = ClothingItem.objects.all()
+    serializer_class = ClothingItemSerializer
+
 @csrf_exempt
 def create_user(request):
     if request.method == 'POST':
@@ -72,9 +76,6 @@ def user_login(request):
         # invalid request method
         return JsonResponse({'error': 'Invalid request method'}, status=405)
 
-class ClothingItemDelete(generics.DestroyAPIView):
-    queryset = ClothingItem.objects.all()
-    serializer_class = ClothingItemSerializer
 
 @api_view(['GET'])
 def get_weather(request):
