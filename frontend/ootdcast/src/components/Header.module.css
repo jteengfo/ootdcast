@@ -1,10 +1,10 @@
 /* src/components/Header.module.css */
 .header {
-    background-color: #f4f4f4; /* Dark background color */
+    background-color: white; 
     color: #101010; /* Text color */
     padding: 1rem; /* Padding around the content */
     text-align: center; /* Center the text */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Add a subtle shadow */
     font-size: 1.5rem; /* Increase font size */
     font-weight: bold; /* Make the text bold */
   }
