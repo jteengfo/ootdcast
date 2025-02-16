@@ -1,0 +1,17 @@
+.dateContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+    background-color: white;
+}
+
+.calendarIcon {
+    width: 20px; 
+    height: 20px;
+}
+
+.dateText {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}

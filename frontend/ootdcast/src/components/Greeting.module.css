@@ -1,8 +1,17 @@
 .hello {
   position: absolute;
-  bottom: 10px; /* Distance from the bottom */
-  left: 60px; /* Distance from the left */
+  bottom: 6vh; 
+  left: 7vh; 
   color: #101010;
+}
+.dateComponent {
+  position: absolute;
+  bottom: 4vh;
+  left: 7vh;
+  color: #101010;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 5px 5px;
 }
 
 
