@@ -3,6 +3,8 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model, logout
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.contrib.auth import authenticate
+import json
 
 from rest_framework import generics
 from rest_framework.parsers import JSONParser
@@ -40,3 +42,29 @@ def create_user(request):
     else:
         return JsonResponse({'error': 'Invalid request method'}, status=405)
     
+@csrf_exempt
+def user_login(request):
+    if request.method == 'POST':
+        try:
+            # parse json data from req
+            data = json.loads(request.body)
+            username = data.get('username')
+            password = data.get('password')
+
+            # auth user
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                # means login successful
+                return JsonResponse({'message': 'Login successful'}, status=200)
+            else:
+                # invalid credentials
+                return JsonResponse({'error': 'Invalid username or password'}, status=401)
+
+        except Exception as e:
+            # handle unexpected errors
+            return JsonResponse({'error': str(e)}, status=500)
+        
+    else:
+        # invalid request method
+        return JsonResponse({'error': 'Invalid request method'}, status=405)

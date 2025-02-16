@@ -1,5 +1,5 @@
 // src/app/auth/login/page.js
-import LoginPage from '../../../components/Login';
+import LoginPage from '../../components/Login';
 
 export default function Login() {
   return <LoginPage />;

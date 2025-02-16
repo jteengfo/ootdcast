@@ -31,19 +31,30 @@ export default function LoginPage() {
     }
 
     try {
-      // Mock API call - replace with actual API calls
-      const mockResponse = {
-        ok: true,
-        json: () => Promise.resolve({ message: 'Success!' }),
-      };
+      const endpoint = isLogin
+      ? 'http://127.0.0.1:8000/api/auth/login/'
+      : 'http://127.0.0.1:8000/api/users/create/'
 
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API delay
-      
-      if (!mockResponse.ok) throw new Error('Mock error');
-      
-      console.log(isLogin ? 'Logged in' : 'Signed up');
-      // Redirect to dashboard or home page
-      // window.location.href = '/dashboard';
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username,
+          password
+        })
+      })
+
+      const data  = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong')
+      }
+
+      console.log(isLogin ? 'Logged in' : 'Signed up')
+
+      window.location.href = '/history'
 
     } catch (error) {
       setError(error.message || 'Something went wrong');
