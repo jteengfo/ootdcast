@@ -17,15 +17,15 @@ export default function Sidebar() {
         <li>
           <Link href="/library" className={styles.menuItem}>
             <div className={styles.menuContent}>
-              <Image src="/icons/library.png" alt="Library" width={24} height={24} />
-              <span>Library</span>
+              <Image src="/icons/dress.png" alt="Library" width={24} height={24} />
+              <span>Catalouge</span>
             </div>
           </Link>
         </li>
         <li>
           <Link href="/history" className={styles.menuItem}>
             <div className={styles.menuContent}>
-              <Image src="/icons/history.png" alt="History" width={24} height={24} />
+              <Image src="/icons/clock.png" alt="History" width={24} height={24} />
               <span>History</span>
             </div>
           </Link>
