@@ -1,6 +1,8 @@
-.greeting h1 {
-    font-size: 2rem;
-    color: #101010;
-    margin-bottom: 1rem;
-  }
+.hello {
+  position: absolute;
+  bottom: 10px; /* Distance from the bottom */
+  left: 60px; /* Distance from the left */
+  color: #101010;
+}
+
 
