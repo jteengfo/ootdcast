@@ -8,20 +8,26 @@ export default function Sidebar() {
       <ul>
         <li>
           <Link href="/" className={styles.menuItem}>
-            <Image src="/icons/home.png" alt="Home" width={20} height={20} />
-            <span>Home</span>
+            <div className={styles.menuContent}>
+              <Image src="/icons/home.png" alt="Home" width={24} height={24} />
+              <span>Home</span>
+            </div>
           </Link>
         </li>
         <li>
           <Link href="/library" className={styles.menuItem}>
-            <Image src="/icons/dress.png" alt="Library" width={20} height={20} />
-            <span>Library</span>
+            <div className={styles.menuContent}>
+              <Image src="/icons/library.png" alt="Library" width={24} height={24} />
+              <span>Library</span>
+            </div>
           </Link>
         </li>
         <li>
           <Link href="/history" className={styles.menuItem}>
-            <Image src="/icons/clock.png" alt="History" width={20} height={20} />
-            <span>History</span>
+            <div className={styles.menuContent}>
+              <Image src="/icons/history.png" alt="History" width={24} height={24} />
+              <span>History</span>
+            </div>
           </Link>
         </li>
       </ul>
