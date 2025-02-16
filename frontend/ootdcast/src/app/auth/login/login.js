@@ -42,6 +42,10 @@ export default function LoginPage() {
       if (!mockResponse.ok) throw new Error('Mock error');
       
       console.log(isLogin ? 'Logged in' : 'Signed up');
+      
+      // Save username to local storage
+      localStorage.setItem('username', username);
+      
       // Redirect to dashboard or home page
       // window.location.href = '/dashboard';
 
