@@ -32,8 +32,8 @@ export default function LoginPage() {
 
     try {
       const endpoint = isLogin
-      ? 'http://127.0.0.1:8000/api/auth/login/'
-      : 'http://127.0.0.1:8000/api/users/create/'
+      ? 'http://127.0.0.1:8000/auth/login/'
+      : 'http://127.0.0.1:8000/users/create/'
 
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -54,7 +54,7 @@ export default function LoginPage() {
 
       console.log(isLogin ? 'Logged in' : 'Signed up')
 
-      window.location.href = '/history'
+      window.location.href = '/dashboard'
 
     } catch (error) {
       setError(error.message || 'Something went wrong');
