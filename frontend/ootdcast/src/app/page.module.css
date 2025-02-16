@@ -11,11 +11,11 @@
   background-color: white; 
   padding: 1rem;
   box-shadow: 0 2px 4px #f4f4f4; 
-  display: flex; /* Enables flexbox */
-  align-items: center; /* Aligns items vertically */
-  justify-content: space-between; /* Adjusts spacing */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 10px; 
-  gap: 1rem; /* Adds space between SearchBar and Header */
+  gap: 1rem; 
 }
 
 .content {
@@ -24,7 +24,7 @@
 }
 
 .sidebar {
-  width: 15%; /* Fixed width for the sidebar */
+  width: 15%; 
   background-color: #f4f4f4; 
   padding-right: 1rem;
    /*box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); Optional: Add a shadow for the sidebar */
@@ -33,22 +33,19 @@
 .main {
   flex: 1;
   padding: 2rem;
-  background-color: white; /* Background color for the main content area */
+  background-color: white; 
 }
 
-.greetingContainer {
-  width: 95%; /* Adjust as needed */
-  max-width: 1250px; /* Optional for responsiveness */
-  margin: 0 auto; /* Centers the div */
+.greeting {
+  width: 95%;
+  max-width: 1250px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 30vh;
   position: relative;
-  border-radius: 10px; /* Soft rounded corners */
+  border-radius: 30px; /* Soft rounded corners */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
   background-color: azure;
-}
-.greetingTextContainer{
-  margin-bottom: 0;
 }
