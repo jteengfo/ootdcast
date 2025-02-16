@@ -15,7 +15,9 @@ export default function Home() {
         </div>
         <main className={styles.main}>
           <div className={styles.greetingContainer}>
-            <div className={styles.greetingTextContainer}><Greeting /></div>
+            <div className={styles.greetingTextContainer}>
+              <Greeting />
+            </div>
           </div>
         </main>
       </div>
