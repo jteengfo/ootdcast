@@ -1,6 +1,6 @@
 /* src/components/Sidebar.module.css */
 .sidebar {
-    width: 30%; /* Fixed width for the sidebar */
+    width: 7.5%; /* Fixed width for the sidebar */
     height: 100vh; /* Full height of the viewport */
     background-color: #FFFFFF;
     padding: 1rem;
