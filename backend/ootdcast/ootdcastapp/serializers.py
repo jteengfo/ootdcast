@@ -9,7 +9,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 
                   'password', 'location', 
                   'preferences']
-        extra_kwarts = {
+        extra_kwargs = {
             'password': {'write_only': True},    # ensures password is write-only
             'location': {'required': False},
             'preferences': {'required': False}

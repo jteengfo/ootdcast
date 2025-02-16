@@ -16,10 +16,8 @@ export default function Home() {
           <Sidebar />
         </div>
         <main className={styles.main}>
-          <div className={styles.greetingContainer}>
-            <div className={styles.greetingTextContainer}>
-              <Greeting />
-            </div>
+          <div className={styles.greeting}>
+            <Greeting />
           </div>
         </main>
       </div>
