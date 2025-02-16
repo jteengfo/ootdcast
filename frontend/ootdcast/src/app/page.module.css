@@ -8,13 +8,13 @@
 
 .header {
   width: 100%;
-  background-color: #f4f4f4; 
+  background-color: white; 
   padding: 1rem;
   box-shadow: 0 2px 4px #f4f4f4; 
   display: flex; /* Enables flexbox */
   align-items: center; /* Aligns items vertically */
   justify-content: space-between; /* Adjusts spacing */
-  padding: 10px; /* Adds spacing */
+  padding: 10px; 
   gap: 1rem; /* Adds space between SearchBar and Header */
 }
 
@@ -25,7 +25,7 @@
 
 .sidebar {
   width: 15%; /* Fixed width for the sidebar */
-  background-color: #f4f4f4; /* Dark background color for the sidebar */
+  background-color: #f4f4f4; 
   padding-right: 1rem;
    /*box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); Optional: Add a shadow for the sidebar */
 }
