@@ -1,21 +1,8 @@
-/* src/app/page.module.css */
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: white; /* Set background color to white */
-}
-
-.header {
-  width: 100%;
-  background-color: white; 
-  padding: 1rem;
-  box-shadow: 0 2px 4px #f4f4f4; 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px; 
-  gap: 1rem; 
 }
 
 .content {
@@ -24,28 +11,47 @@
 }
 
 .sidebar {
-  width: 15%; 
-  background-color: #f4f4f4; 
-  padding-right: 1rem;
-   /*box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); Optional: Add a shadow for the sidebar */
+  width: 15%; /* Sidebar takes 15% of the width */
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 1rem; /* Add padding for spacing */
 }
 
 .main {
-  flex: 1;
+  flex: 1; /* Main content takes the remaining space */
   padding: 2rem;
-  background-color: white; 
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Add spacing between sections */
 }
 
 .greeting {
-  width: 95%;
+  width: 95%; /* Take up most of the width */
   max-width: 1250px;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the greeting */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30vh;
+  height: 30vh; /* Adjust height as needed */
   position: relative;
   border-radius: 30px; /* Soft rounded corners */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
-  background-color: azure;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: azure; /* Light blue background */
+}
+
+.bottomSection {
+  display: flex;
+  gap: 2rem; /* Add spacing between ClothingForm and OutfitHistory */
+  width: 95%; /* Match the width of the greeting section */
+  max-width: 1250px;
+  margin: 0 auto; /* Center the bottom section */
+}
+
+.clothingForm,
+.outfitHistory {
+  flex: 1; /* Split the bottom section equally */
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
