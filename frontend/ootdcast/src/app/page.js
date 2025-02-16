@@ -1,10 +1,12 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Header from "./../components/Header";
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
+        <Header/>
         <Image
           className={styles.logo}
           src="/next.svg"
@@ -19,6 +21,7 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
 
         <div className={styles.ctas}>
           <a
