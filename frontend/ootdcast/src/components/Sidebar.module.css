@@ -1,32 +1,59 @@
-/* src/components/Sidebar.module.css */
+/* Sidebar container */
 .sidebar {
-    width: 100%; /* Fixed width for the sidebar */
-    height: 100vh; /* Full height of the viewport */
-    background-color: #FFFFFF;
-    padding: 1rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar li {
-    margin-bottom: 1rem;
-  }
-  
-  .sidebar a {
-    color: #101010;
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: block;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar a:hover {
-    background-color: #34495e; /* Darker background on hover */
-  }
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  background-color: #ffffff; /* White background */
+  padding: 1rem;
+}
+
+/* Sidebar list */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar list items */
+.sidebar li {
+  margin-bottom: 1rem;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: #101010;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar a:hover {
+  background-color: #34495e; /* Darker background on hover */
+  color: white;
+}
+
+/* Menu item wrapper */
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* Uniform spacing between icon and text */
+  padding: 8px 12px;
+}
+
+/* Icon and text container */
+.menuContent {
+  display: flex;
+  align-items: center; /* Centers icon and text vertically */
+  gap: 12px;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Icon styling */
+.menuItem img {
+  flex-shrink: 0; /* Prevents image from shrinking */
+  width: 24px;
+  height: 24px;
+}
