@@ -12,7 +12,9 @@ export default function Greeting() {
             <div className={styles.dateComponent}>
                 <DateComponent />
             </div>
-            <Weather />
+            <div className={styles.weather}>
+                <Weather />
+            </div>
         </div>
     );
 }

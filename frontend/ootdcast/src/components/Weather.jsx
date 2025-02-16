@@ -1,12 +1,14 @@
 'use client'
 
 import { useState } from "react"
+import "./Weather.css"
 
 export default function Weather() {
     const [city, setCity] = useState('')
     const [temperature, setTemperature] = useState(null)
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
 
     const handleInputChange = (event) => {
         setCity(event.target.value)
@@ -34,6 +36,7 @@ export default function Weather() {
                 } else {
                     setTemperature(data.temperature)
                     setError('')
+                    setSubmitted(true) // Hide input, button, and header after successful response
                 }
             } else {
                 setTemperature(null)
@@ -49,67 +52,36 @@ export default function Weather() {
     }
 
     return (
-        <>
-            <h1>Weather Checker</h1>
+        <div className="weather-container">
+            {!submitted && <h1>Weather Checker</h1>}
 
-            <input 
-                type="text" 
-                placeholder="Enter city name" 
-                value={city} 
-                onChange={handleInputChange}
-                disabled={loading}
-                style={{
-                    padding: '8px 12px',
-                    fontSize: '16px',
-                    borderRadius: '4px',
-                    border: '1px solid #ccc',
-                    marginRight: '8px',
-                    width: '200px',
-                    backgroundColor: 'white',
-                    color: '#333',
-                    '::placeholder': {
-                        color: '#999'
-                    }
-                }}
-            />
-            <button 
-                onClick={handleSubmit}
-                disabled={loading}
-                style={{
-                    padding: '8px 16px',
-                    fontSize: '16px',
-                    borderRadius: '4px',
-                    border: 'none',
-                    backgroundColor: '#007bff',
-                    color: 'white',
-                    cursor: loading ? 'not-allowed' : 'pointer',
-                    opacity: loading ? 0.7 : 1,
-                    transition: 'opacity 0.2s'
-                }}
-            >
-                {loading ? 'Loading...' : 'Get Weather'}
-            </button>
+            {!submitted && (
+                <>
+                    <input 
+                        type="text" 
+                        placeholder="Enter city name" 
+                        value={city} 
+                        onChange={handleInputChange}
+                        disabled={loading}
+                        className="weather-input"
+                    />
+                    <button 
+                        onClick={handleSubmit}
+                        disabled={loading}
+                        className="weather-button"
+                    >
+                        {loading ? 'Loading...' : 'Get Weather'}
+                    </button>
+                </>
+            )}
 
-            {error && <p style={{ 
-                color: 'red',
-                fontSize: '14px',
-                marginTop: '8px'
-            }}>{error}</p>}
+            {error && <p className="weather-error">{error}</p>}
 
-            {temperature !== null && (
-                <p style={{
-                    fontSize: '18px',
-                    fontWeight: '500',
-                    color: '#333',
-                    marginTop: '16px',
-                    padding: '12px',
-                    backgroundColor: '#f8f9fa',
-                    borderRadius: '4px',
-                    display: 'inline-block'
-                }}>
-                    The temperature in {city} is: {temperature}°C
+            {temperature !== null && submitted && (
+                <p className="weather-result">
+                    {temperature}°C at {city}
                 </p>
             )}
-        </>
+        </div>
     )
 }
