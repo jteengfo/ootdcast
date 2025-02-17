@@ -8,7 +8,6 @@ export default function History(){
     return(
         <div className={styles.page}>
             <div className={styles.header}>
-                <SearchBar />
                 <Header />
             </div>
             <div className={styles.content}>
