@@ -7,7 +7,7 @@ def get_weather_data(city):
     Fetch weather data for a given city using Weatherstack API
     Returns a dictionary with weather information or None if the request fails
     """
-    api_key = os.getenv('WEATHERSTACK_API_KEY', '2c71f3d7701fdcb3c46eea787ff0bf14')  # Fallback for development
+    api_key = os.getenv('WEATHERSTACK_API_KEY', 'ff7aaf6ec0197e7d25804b0cdf05b8ab')  # Fallback for development
     url = f'http://api.weatherstack.com/current?access_key={api_key}&query={city}'
 
     try:
