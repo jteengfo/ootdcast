@@ -1,6 +1,6 @@
 # views handle
 from django.shortcuts import render
-from django.contrib.auth import get_user_model, login, authenticate
+from django.contrib.auth import get_user_model, login, authenticate, logout
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
@@ -92,7 +92,17 @@ def user_login(request):
         # invalid request method
         return JsonResponse({'error': 'Invalid request method'}, status=405)
 
-
+@csrf_exempt
+def user_logout(request):
+    if request.method == 'POST':
+        try:
+            # log user out
+            logout(request)
+            return JsonResponse({'message': 'Logout successful'}, status=200)
+        except Exception as e:
+            return JsonResponse({'message': str(e)}, status=500)
+    else:
+        return JsonResponse({'error': 'Invalid request method'}, status=405)
 
 @api_view(['GET'])
 def get_weather(request):
