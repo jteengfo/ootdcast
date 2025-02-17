@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth import get_user_model, login, authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from django.utils.decorators import method_decorator
 import json
 
 from rest_framework import generics
@@ -29,10 +30,11 @@ class ClothingItemDelete(generics.DestroyAPIView):
     queryset = ClothingItem.objects.all()
     serializer_class = ClothingItemSerializer
 
+@method_decorator(csrf_exempt, name='dispatch')
 class ClothingItemListCreate(generics.ListCreateAPIView):
     serializer_class = ClothingItemSerializer
     permission_classes = [IsAuthenticated] # ensure user is logged in
-
+    
     def get_queryset(self):
         # filter clothing items by currently logged in user
         return ClothingItem.objects.filter(user=self.request.user)
