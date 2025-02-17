@@ -1,4 +1,5 @@
 import styles from './Greeting.module.css';
+import Weather from './Weather';
 import Hello from './Hello';
 import DateComponent from './DateComponent'
 
@@ -10,6 +11,9 @@ export default function Greeting() {
             </div>
             <div className={styles.dateComponent}>
                 <DateComponent />
+            </div>
+            <div className={styles.weather}>
+                <Weather />
             </div>
         </div>
     );

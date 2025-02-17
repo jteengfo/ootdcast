@@ -1,0 +1,53 @@
+.weather-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: black; /* Ensures the "Weather Checker" text is black */
+}
+
+.weather-input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 8px;
+    width: 200px;
+    background-color: white;
+    color: #333;
+}
+
+.weather-input::placeholder {
+    color: #999;
+}
+
+.weather-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.weather-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.weather-error {
+    color: red;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.weather-result {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 16px;
+    padding: 12px;
+    background-color: transparent; /* Removes background */
+    border-radius: 4px;
+    display: inline-block;
+}

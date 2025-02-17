@@ -111,4 +111,7 @@ def get_weather(request):
     
     if weather_data:
         return Response(weather_data)
-    return Response({'error': 'Failed to fetch weather data'}, status=400)
+    return Response(
+        {'error': f'Could not find weather data for city: {city}. Please check the city name and try again.'}, 
+        status=400
+    )
