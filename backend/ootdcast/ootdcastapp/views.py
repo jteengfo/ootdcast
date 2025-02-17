@@ -1,13 +1,14 @@
 # views handle
 from django.shortcuts import render
-from django.contrib.auth import get_user_model, logout
+from django.contrib.auth import get_user_model, login, authenticate
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
-from django.contrib.auth import authenticate
+from django.utils.decorators import method_decorator
 import json
 
 from rest_framework import generics
 from rest_framework.parsers import JSONParser
+from rest_framework.permissions import IsAuthenticated
 from .models import User, ClothingItem, Outfit
 from .serializers import UserSerializer, ClothingItemSerializer
 from rest_framework.decorators import api_view
@@ -24,6 +25,24 @@ class UserList(generics.ListCreateAPIView):
 class UserCreate(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+class ClothingItemDelete(generics.DestroyAPIView):
+    queryset = ClothingItem.objects.all()
+    serializer_class = ClothingItemSerializer
+
+@method_decorator(csrf_exempt, name='dispatch')
+class ClothingItemListCreate(generics.ListCreateAPIView):
+    serializer_class = ClothingItemSerializer
+    permission_classes = [IsAuthenticated] # ensure user is logged in
+    
+    def get_queryset(self):
+        # filter clothing items by currently logged in user
+        return ClothingItem.objects.filter(user=self.request.user)
+
+class ClothingItemDelete(generics.DestroyAPIView):
+    queryset = ClothingItem.objects.all()
+    serializer_class = ClothingItemSerializer
+    permission_classes = [IsAuthenticated]
 
 @csrf_exempt
 def create_user(request):
@@ -58,7 +77,8 @@ def user_login(request):
             user = authenticate(username=username, password=password)
 
             if user is not None:
-                # means login successful
+                # log in the user (i.e. create a session)
+                login(request, user)
                 return JsonResponse({'message': 'Login successful'}, status=200)
             else:
                 # invalid credentials
@@ -72,9 +92,7 @@ def user_login(request):
         # invalid request method
         return JsonResponse({'error': 'Invalid request method'}, status=405)
 
-class ClothingItemDelete(generics.DestroyAPIView):
-    queryset = ClothingItem.objects.all()
-    serializer_class = ClothingItemSerializer
+
 
 @api_view(['GET'])
 def get_weather(request):

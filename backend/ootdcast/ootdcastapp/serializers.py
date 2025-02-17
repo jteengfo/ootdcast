@@ -29,7 +29,8 @@ class UserSerializer(serializers.ModelSerializer):
 class ClothingItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = ClothingItem
-        fields = '__all__'
+        fields = ['id', 'name', 'formality', 
+                  'warmth_level', 'user']
 
 class OutfitSerializer(serializers.ModelSerializer):
     class Meta:

@@ -16,7 +16,8 @@ class ClothingItem(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     formality = models.CharField(max_length=50)
-    warmth_level = models.CharField(max_length=50)
+    warmth_level = models.IntegerField(0)
+    clothing_type = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='cloting_items')
 
     def __str__(self):
