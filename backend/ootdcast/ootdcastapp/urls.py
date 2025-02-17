@@ -15,3 +15,4 @@ urlpatterns = [
     # DELETE
     path('clothing-items/delete/<int:pk>/', views.ClothingItemDelete.as_view(), name='clothing-item-delete'),
 ]
+
