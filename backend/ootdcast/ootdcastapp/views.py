@@ -42,6 +42,7 @@ class ClothingItemListCreate(generics.ListCreateAPIView):
 class ClothingItemDelete(generics.DestroyAPIView):
     queryset = ClothingItem.objects.all()
     serializer_class = ClothingItemSerializer
+    permission_classes = [IsAuthenticated]
 
 @csrf_exempt
 def create_user(request):
