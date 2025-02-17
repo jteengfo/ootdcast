@@ -33,7 +33,7 @@ export default function AddClothing() {
         },
         body: JSON.stringify({
           name,
-          formality,
+          formality: null,
           warmthLevel,
           clothingType,
         }),
@@ -80,7 +80,7 @@ export default function AddClothing() {
           />
         </div>
 
-        <div className={styles.formGroup}>
+        {/* <div className={styles.formGroup}>
           <label htmlFor="formality">Formality:</label>
           <select
             id="formality"
@@ -93,7 +93,7 @@ export default function AddClothing() {
             <option value="semi-formal">Semi-Formal</option>
             <option value="formal">Formal</option>
           </select>
-        </div>
+        </div> */}
 
         <div className={styles.formGroup}>
           <label htmlFor="warmthLevel">Warmth Level:</label>
@@ -112,16 +112,14 @@ export default function AddClothing() {
 
         <div className={styles.formGroup}>
           <label htmlFor="clothingType">Clothing Type:</label>
-          <select
+          <input
+            type="text"
             id="clothingType"
             value={clothingType}
             onChange={(e) => setClothingType(e.target.value)}
             disabled={loading}
-          >
-            <option value="" disabled>Select clothing type</option>
-            <option value="top">Top</option>
-            <option value="bottom">Bottom</option>
-          </select>
+            placeholder="Enter clothing type"
+          />
         </div>
 
         <button
