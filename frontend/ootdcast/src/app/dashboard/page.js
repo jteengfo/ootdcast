@@ -4,7 +4,7 @@ import Sidebar from "@/components/Sidebar";
 import Greeting from "@/components/Greeting";
 import SearchBar from "@/components/Searchbar";
 import ClothingForm from "@/components/AddClothing";
-import OutfitHistory from "@/components/OutfitHistory";
+import OutfitHistory from "@/components/GenerateOutfit";
 
 export default function Home() {
   return (
