@@ -1,0 +1,23 @@
+# Assuming you have a user with ID 1
+user = User.objects.get(id=1)
+
+clothing_items = [
+    ClothingItem(name="Funky Winter Jacket", clothing_type="Jacket", warmth_level=6, user=user),
+    ClothingItem(name="Cozy Knit Sweater", clothing_type="Sweater", warmth_level=5, user=user),
+    ClothingItem(name="Thermal Long Sleeve Shirt", clothing_type="Shirt", warmth_level=4, user=user),
+    ClothingItem(name="Stylish Scarf", clothing_type="Accessory", warmth_level=3, user=user),
+    ClothingItem(name="Insulated Snow Pants", clothing_type="Pants", warmth_level=6, user=user),
+    ClothingItem(name="Wool Beanie", clothing_type="Accessory", warmth_level=4, user=user),
+    ClothingItem(name="Fleece Lined Leggings", clothing_type="Leggings", warmth_level=5, user=user),
+    ClothingItem(name="Winter Boots", clothing_type="Footwear", warmth_level=6, user=user),
+    ClothingItem(name="Lightweight T-Shirt", clothing_type="Shirt", warmth_level=1, user=user),
+    ClothingItem(name="Casual Shorts", clothing_type="Shorts", warmth_level=2, user=user),
+    ClothingItem(name="Flowy Sundress", clothing_type="Dress", warmth_level=1, user=user),
+    ClothingItem(name="Beach Cover-Up", clothing_type="Cover-Up", warmth_level=1, user=user),
+    ClothingItem(name="Flip Flops", clothing_type="Footwear", warmth_level=1, user=user),
+    ClothingItem(name="Sun Hat", clothing_type="Accessory", warmth_level=1, user=user),
+    ClothingItem(name="Lightweight Cardigan", clothing_type="Cardigan", warmth_level=2, user=user),
+]
+
+for item in clothing_items:
+    item.save()
