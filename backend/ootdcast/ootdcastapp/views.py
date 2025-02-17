@@ -5,6 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.contrib.auth import authenticate
 import json
+import requests
 
 from rest_framework import generics
 from rest_framework.parsers import JSONParser
@@ -13,6 +14,9 @@ from .serializers import UserSerializer, ClothingItemSerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .weather import get_weather_data
+from google import genai
+
+client = genai.Client(api_key="AIzaSyAnP6n4hRJAtlDzmJLnntGO2orvwrNzTl8")
 
 User = get_user_model()
 
@@ -87,3 +91,44 @@ def get_weather(request):
         {'error': f'Could not find weather data for city: {city}. Please check the city name and try again.'}, 
         status=400
     )
+
+@api_view(['GET'])
+def get_user_clothing_items(request, user_id):
+    try:
+        clothing_items = ClothingItem.objects.filter(user_id=user_id)  # Assuming ClothingItem has a user foreign key
+        serializer = ClothingItemSerializer(clothing_items, many=True)
+        return Response(serializer.data, status=200)
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
+
+@api_view(['GET'])
+def suggest_outfit(request, user_id):
+    try:
+        # Fetch user's clothing items
+        clothing_items = ClothingItem.objects.filter(user_id=user_id)
+        serializer = ClothingItemSerializer(clothing_items, many=True)
+        
+        # Get current temperature
+        city = request.query_params.get('city', 'Edmonton')
+        weather_data = get_weather_data(city)
+        temperature = weather_data['temperature'] if weather_data else None
+        
+        if temperature is None:
+            return JsonResponse({'error': 'Could not retrieve weather data'}, status=400)
+
+        # Prepare data for Gemini API
+        outfit_request_data = {
+            "clothes": serializer.data,
+            "temperature": temperature
+        }
+
+        # Call Gemini API
+        gemini_response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=f"Suggest an outfit based on the following clothes: {outfit_request_data['clothes']} and the temperature: {outfit_request_data['temperature']}. Just give me the list of clothes nothing else"
+        )
+
+        return JsonResponse({'suggested_outfit': gemini_response.text}, status=200)
+
+    except Exception as e:
+        return JsonResponse({'error': str(e)}, status=500)
